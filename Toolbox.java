@@ -1,5 +1,6 @@
 import java.security.MessageDigest;
 import java.io.*;
+import java.util.List;
 
 public class Toolbox {
 
@@ -19,5 +20,11 @@ public class Toolbox {
     for (byte b : bytes)
       result.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
     return result.toString();
+  }
+
+  public static void printBlockChain(List<Block> blockchain) {
+    for (Block block : blockchain) {
+      block.printBlock();
+    }
   }
 }

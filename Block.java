@@ -44,15 +44,13 @@ public class Block {
     return getBlockHash(nonce).startsWith("0000");
   }
 
-  public void mineBlock(){
+  public void mineBlock() {
     for (int i = 0; i < maximumNonce; i++) {
       if (isValid(i)) {
         validBlockHash = getBlockHash(i);
         validNonce = i;
-        System.out.println("The nonce is " + validNonce);
+//        System.out.println("The nonce is " + validNonce);
         break;
-      } else {
-        System.out.println(i);
       }
     }
   }
