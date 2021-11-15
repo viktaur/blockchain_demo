@@ -1,15 +1,20 @@
 import java.lang.Object;
+import java.util.Date;
 
 public class Block {
 
   int id;
   int maximumNonce = 100000;
-  String previousHash;
-  String data;
+
+  public String hash;
+  public String previousHash;
+  private String data;
+  private long timeStamp;
+
   String validBlockHash;
   int validNonce;
 
-  public Block(int id, String previousHash, String data) {
+  public Block(String previousHash, String data) {
     this.id = id;
     this.previousHash = previousHash;
     this.data = data;
